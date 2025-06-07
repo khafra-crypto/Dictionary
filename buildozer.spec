@@ -1,3 +1,4 @@
+
 # This .spec config file tells Buildozer an app's requirements for being built.
 #
 # It largely follows the syntax of an .ini file.
@@ -6,7 +7,7 @@
 [app]
 
 # (str) Title of your application
-title = Afra
+title = Dictionary
 
 # (str) Package name
 package.name = khaled
@@ -42,7 +43,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3==3.13.2,kivy==2.3.1,https://github.com/kivymd/KivyMD/archive/refs/heads/master.zip,sqlite3,arabic-reshaper==3.0.0,python-bidi==0.6.6,pandas==1.0.1,pillow==11.1.0,filetype==1.2.0,six,future
+requirements = python3,kivy==2.3.1,git+https://github.com/kivymd/KivyMD.git@master,sqlite3,arabic-reshaper==3.0.0,python-bidi==0.6.6,pandas==1.0.1,pillow==11.1.0,filetype==1.2.0,six,future,materialyoucolor,exceptiongroup,asyncgui,asynckivy
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
