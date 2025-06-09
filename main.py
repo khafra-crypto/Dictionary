@@ -1,7 +1,7 @@
 import sqlite3
 from kivymd.uix.list import ThreeLineAvatarIconListItem
-from libs.arabic_reshaper import reshape
-from libs.bidi.algorithm import get_display
+import arabic_reshaper
+from bidi.algorithm import get_display
 from kivymd.app import MDApp
 from kivymd.uix.textfield import MDTextField
 from kivymd.uix.screen import MDScreen
@@ -53,7 +53,7 @@ class Ar_text(MDTextField):
     str = StringProperty()
     def __init__(self, **kwargs):
         super(Ar_text, self).__init__(**kwargs)
-        self.text = get_display(reshape("الكلمة بالعربيةً"))
+        self.text = get_display(arabic_reshaper.reshape("الكلمة بالعربيةً"))
         self.font_name = "Amiri-Regular.ttf"
         self.halign = "right"
         self.text_color_normal = 1, 1, 1, 0.4
@@ -61,12 +61,12 @@ class Ar_text(MDTextField):
         if not from_undo and (len(self.text) + len(substring) > self.max_chars):
             return
         self.str = self.str + substring
-        self.text = get_display(reshape(self.str))
+        self.text = get_display(arabic_reshaper.reshape(self.str))
         substring = ""
         super(Ar_text, self).insert_text(substring, from_undo)
     def do_backspace(self, from_undo=False, mode='bkspc'):
         self.str = self.str[0:len(self.str)-1]
-        self.text = get_display(reshape(self.str))
+        self.text = get_display(arabic_reshaper.reshape(self.str))
 
 
 class Ch_text(MDTextField):
@@ -74,7 +74,7 @@ class Ch_text(MDTextField):
     str = StringProperty()
     def __init__(self, **kwargs):
         super(Ch_text, self).__init__(**kwargs)
-        self.text = get_display(reshape("الترجمة بالشاوية"))
+        self.text = get_display(arabic_reshaper.reshape("الترجمة بالشاوية"))
         self.size_hint = (None, None)  # Custom size
         self.width = 230  # Width of the rectangle
         self.height = 600  # Height of the rectangle
@@ -86,12 +86,12 @@ class Ch_text(MDTextField):
         if not from_undo and (len(self.text) + len(substring) > self.max_chars):
             return
         self.str = self.str + substring
-        self.text = get_display(reshape(self.str))
+        self.text = get_display(arabic_reshaper.reshape(self.str))
         substring = ""
         super(Ch_text, self).insert_text(substring, from_undo)
     def do_backspace(self, from_undo=False, mode='bkspc'):
         self.str = self.str[0:len(self.str)-1]
-        self.text = get_display(reshape(self.str))
+        self.text = get_display(arabic_reshaper.reshape(self.str))
 
 
 class Dic_text(MDTextField):
@@ -99,7 +99,7 @@ class Dic_text(MDTextField):
     str = StringProperty()
     def __init__(self, **kwargs):
         super(Dic_text, self).__init__(**kwargs)
-        self.text = get_display(reshape("إبحث هنا"))
+        self.text = get_display(arabic_reshaper.reshape("إبحث هنا"))
         self.font_name = "Amiri-Regular.ttf"
         self.halign = "right"
         self.mode = "round"
@@ -109,12 +109,12 @@ class Dic_text(MDTextField):
         if not from_undo and (len(self.text) + len(substring) > self.max_chars):
             return
         self.str = self.str + substring
-        self.text = get_display(reshape(self.str))
+        self.text = get_display(arabic_reshaper.reshape(self.str))
         substring = ""
         super(Dic_text, self).insert_text(substring, from_undo)
     def do_backspace(self, from_undo=False, mode='bkspc'):
         self.str = self.str[0:len(self.str)-1]
-        self.text = get_display(reshape(self.str))
+        self.text = get_display(arabic_reshaper.reshape(self.str))
 
 
 class Ver_text(MDTextField):
@@ -122,7 +122,7 @@ class Ver_text(MDTextField):
     str = StringProperty()
     def __init__(self, **kwargs):
         super(Ver_text, self).__init__(**kwargs)
-        self.text = get_display(reshape("ادخل الفعل (في الماضي)"))
+        self.text = get_display(arabic_reshaper.reshape("ادخل الفعل (في الماضي)"))
         self.font_name = "Amiri-Regular.ttf"
         self.halign = "right"
         self.mode = "round"
@@ -131,12 +131,12 @@ class Ver_text(MDTextField):
         if not from_undo and (len(self.text) + len(substring) > self.max_chars):
             return
         self.str = self.str + substring
-        self.text = get_display(reshape(self.str))
+        self.text = get_display(arabic_reshaper.reshape(self.str))
         substring = ""
         super(Ver_text, self).insert_text(substring, from_undo)
     def do_backspace(self, from_undo=False, mode='bkspc'):
         self.str = self.str[0:len(self.str)-1]
-        self.text = get_display(reshape(self.str))
+        self.text = get_display(arabic_reshaper.reshape(self.str))
 
 
 class Pron_text(MDTextField):
@@ -144,7 +144,7 @@ class Pron_text(MDTextField):
     str = StringProperty()
     def __init__(self, **kwargs):
         super(Pron_text, self).__init__(**kwargs)
-        self.text = get_display(reshape("ادخل الفعل (في الماضي)"))
+        self.text = get_display(arabic_reshaper.reshape("ادخل الفعل (في الماضي)"))
         self.font_name = "Amiri-Regular.ttf"
         self.halign = "right"
         self.mode = "round"
@@ -154,12 +154,12 @@ class Pron_text(MDTextField):
         if not from_undo and (len(self.text) + len(substring) > self.max_chars):
             return
         self.str = self.str + substring
-        self.text = get_display(reshape(self.str))
+        self.text = get_display(arabic_reshaper.reshape(self.str))
         substring = ""
         super(Pron_text, self).insert_text(substring, from_undo)
     def do_backspace(self, from_undo=False, mode='bkspc'):
         self.str = self.str[0:len(self.str)-1]
-        self.text = get_display(reshape(self.str))
+        self.text = get_display(arabic_reshaper.reshape(self.str))
 
 
 class MainScreen(MDScreen):
@@ -272,7 +272,7 @@ class FavoriteScreen(MDScreen):
 
 
 def fix_arabic_text(text):
-    reshaped_text = reshape(text)
+    reshaped_text = arabic_reshaper.reshape(text)
     return get_display(reshaped_text)
 def create_label_dictionary(text):
     return Label(text=fix_arabic_text(text), font_name="Amiri-Regular.ttf", halign= "right")
@@ -454,7 +454,7 @@ class ConnectedPronouns(MDScreen):
                 lines.append(f"[color={colors['default']}]هم: {row['hom6']}[/color]")
                 lines.append("")
             for line in lines:
-                result_text += reshape(fix_arabic_text(line)) + '\n'
+                result_text += arabic_reshaper.reshape(fix_arabic_text(line)) + '\n'
             self.ids.pronoun_label.text = result_text
             self.ids.pronoun_input.text = ""
             self.ids.pronoun_input.str = ""
@@ -482,7 +482,7 @@ class DictionaryScreen(MDScreen):
         if not results.empty:
             result_text = ""
             for index, row in results.iterrows():
-                result_text += reshape(fix_arabic_text(
+                result_text += arabic_reshaper.reshape(fix_arabic_text(
                     f"العربية: {(fix_arabic_text(row['arabic']))}\nالشاوية: {(row['amazigh'])}\nالنطق: {(row['latin'])}\nالجمع: {(row['plural'])}\nالنطق للجمع: {(row['latinplural'])}\nالمنطقة: {(row['origin'])}\n\n"))
             self.ids.result_label.text = result_text
             self.ids.dictionary_input.focus = True
@@ -594,8 +594,8 @@ class AddWordScreen(MDScreen):
 class UserInput(MDScreen):
     def save_word(self, word, meaning):
         if word and meaning:
-            word = reshape(word)
-            meaning = reshape(meaning)
+            word = arabic_reshaper.reshape(word)
+            meaning = arabic_reshaper.reshape(meaning)
             self.manager.get_screen("addword").add_word_to_database(word, meaning)
             self.ids.word_input.text= ""
             self.ids.meaning_input.text = ""
@@ -656,7 +656,7 @@ class VerbsScreen(MDScreen):
                 lines.append("")  # لإضافة سطر فارغ بين النتائج
             # بناء نص النتيجة النهائي مع إعادة تشكيل النص العربي
             for line in lines:
-                result_text += reshape(fix_arabic_text(line)) + '\n'
+                result_text += arabic_reshaper.reshape(fix_arabic_text(line)) + '\n'
             self.ids.verb_label.text = result_text
             self.ids.verb_input.text = ""
             self.ids.verb_input.str = ""
