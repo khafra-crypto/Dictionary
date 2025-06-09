@@ -28,7 +28,7 @@ source.include_exts = py,png,kv,csv,ttf,db,sqlite
 #source.exclude_exts = spec
 
 # (list) List of directory to exclude (leave empty to not exclude anything)
-source.exclude_dirs = libs
+#source.exclude_dirs = libs
 
 # (list) List of exclusions using pattern matching
 # Do not prefix with './'
