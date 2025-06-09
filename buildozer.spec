@@ -53,7 +53,7 @@ requirements = python3,kivy==2.2.0,kivymd==1.2.0,arabic-reshaper==3.0.0,python-b
 #presplash.filename = %(source.dir)s/data/presplash.png
 
 # (str) Icon of the application
-#icon.filename = %(source.dir)s/languages.png
+icon.filename = %(source.dir)s/languages.png
 
 # (list) Supported orientations
 # Valid options are: landscape, portrait, portrait-reverse or landscape-reverse
