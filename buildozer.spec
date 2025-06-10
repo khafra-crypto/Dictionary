@@ -113,7 +113,7 @@ android.permissions = android.permission.INTERNET, (name=android.permission.WRIT
 android.api = 31
 
 # (int) Minimum API your APK / AAB will support.
-android.minapi = 21
+android.minapi = 24
 
 # (int) Android SDK version to use
 android.sdk = 34
