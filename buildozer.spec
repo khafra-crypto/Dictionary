@@ -10,7 +10,7 @@
 title = Dictionary
 
 # (str) Package name
-package.name = khaled
+package.name = khafra
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.khaled
