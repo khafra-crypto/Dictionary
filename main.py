@@ -12,9 +12,9 @@ from kivymd.uix.dialog import MDDialog
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.popup import Popup
 #import pandas as pd
-from kivy.core.window import Window
+#from kivy.core.window import Window
 import webbrowser
-Window.size = (2400, 1080)
+#Window.size = (2400, 1080)
 
 
 #file_path = "dictionary.csv"
