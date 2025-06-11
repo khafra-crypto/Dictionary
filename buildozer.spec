@@ -7,7 +7,7 @@
 [app]
 
 # (str) Title of your application
-title = Dictionary
+title = Dictionarykh
 
 # (str) Package name
 package.name = khafra
