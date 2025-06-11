@@ -43,7 +43,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy==2.2.0,kivymd==1.2.0,arabic-reshaper==3.0.0,python-bidi==0.4.1,pandas,pillow==11.2.1,filetype==1.2.0,six,future,materialyoucolor,exceptiongroup,asyncgui,asynckivy,numpy,cython,python-dateutil,pytz
+requirements = python3,kivy==2.2.0,kivymd==1.2.0,arabic-reshaper==3.0.0,python-bidi==0.4.1,pillow==11.2.1,filetype==1.2.0,six,future,materialyoucolor,exceptiongroup,asyncgui,asynckivy
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -119,7 +119,7 @@ android.minapi = 24
 android.sdk = 34
 
 # (str) Android NDK version to use
-android.ndk = 25b
+#android.ndk = 25b
 
 # (int) Android NDK API to use. This is the minimum API your app will support, it should usually match android.minapi.
 #android.ndk_api = 21
@@ -336,7 +336,7 @@ android.allow_backup = True
 #p4a.fork = kivy
 
 # (str) python-for-android branch to use, defaults to master
-p4a.branch = develop
+#p4a.branch = develop
 
 # (str) python-for-android specific commit to use, defaults to HEAD, must be within p4a.branch
 #p4a.commit = HEAD
@@ -345,7 +345,7 @@ p4a.branch = develop
 #p4a.source_dir =
 
 # (str) The directory in which python-for-android should look for your own build recipes (if any)
-p4a.local_recipes = ./recipes
+#p4a.local_recipes = ./recipes
 
 # (str) Filename to the hook for p4a
 #p4a.hook =
