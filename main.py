@@ -14,7 +14,7 @@ from kivy.uix.popup import Popup
 #import pandas as pd
 from kivy.core.window import Window
 import webbrowser
-Window.size = (1080, 2400)
+Window.size = (2400, 1080)
 
 
 #file_path = "dictionary.csv"
