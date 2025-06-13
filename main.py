@@ -11,7 +11,7 @@ from kivymd.uix.button import MDIconButton, MDRectangleFlatButton, MDFlatButton
 from kivymd.uix.dialog import MDDialog
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.popup import Popup
-import pandas as pd
+#import pandas as pd
 #from kivy.core.window import Window
 import csv
 import webbrowser
