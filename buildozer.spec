@@ -7,10 +7,10 @@
 [app]
 
 # (str) Title of your application
-title = Dictionarykh
+title = Dictionary
 
 # (str) Package name
-package.name = khafra
+package.name = khaled
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.khaled
@@ -35,7 +35,7 @@ source.include_exts = py,png,kv,csv,ttf,db,sqlite
 #source.exclude_patterns = license,images/*/*.jpg
 
 # (str) Application versioning (method 1)
-version = 0.1
+version = 0.2
 
 # (str) Application versioning (method 2)
 # version.regex = __version__ = ['"](.*)['"]
@@ -50,10 +50,10 @@ requirements = python3,kivy==2.2.0,kivymd==1.2.0,arabic-reshaper==3.0.0,python-b
 # requirements.source.kivy = ../../kivy
 
 # (str) Presplash of the application
-#presplash.filename = %(source.dir)s/data/presplash.png
+presplash.filename = %(source.dir)s/Allah.png
 
 # (str) Icon of the application
-#icon.filename = %(source.dir)s/languages.png
+icon.filename = %(source.dir)s/languages.png
 
 # (list) Supported orientations
 # Valid options are: landscape, portrait, portrait-reverse or landscape-reverse
