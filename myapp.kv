@@ -1,0 +1,626 @@
+MDScreenManager:
+    MainScreen:
+    DictionaryScreen:
+    AddWordScreen:
+    UserInput:
+    VerbsScreen:
+    ConnectedPronouns:
+    FavoriteScreen:
+    ContactUs:
+<MainScreen>:
+    name: "main"
+    md_bg_color: 10/255, 25/255, 47/255, 1
+    MDBoxLayout:
+        orientation: "vertical"
+        size_hint: 1, 1
+        spacing: min(self.width, self.height) * 0.02
+        padding: min(self.width, self.height) * 0.02
+        MDFloatLayout:
+            size_hint: 1, 0.1
+            MDLabel:
+                text: app.get_arabic_text("تنبيــه")
+                size_hint_x: 0.4
+                color: 180/255, 190/255, 200/255, 1
+                font_name: "Amiri-Regular"
+                font_size: min(self.width, self.height) * 0.4
+                pos_hint: {"center_x": 0.65, "center_y": 0.5}
+        MDLabel:
+            text: app.get_arabic_text("""الشاوية هي لهجة أمازيغية يتحدث بها سكان ثلاث ولايات \n جزائريــة رئيسيــة:أم البواقي خنشلـــة وباتنــة بالإضافــة إلى \n بعض المناطق من تبسة وسوق أهراس و تختلف بعض \n الكلمات بين المناطق، وقد تم بناء هذا القاموس استنادًا \n إلى لهجة الشاوية في منطقة أم البواقي، وبالتحديد مدينة \n عين مليلة نرحب بمساهمة المستخدمين من خنشلة وباتنة \n لإضافة الكلمــات التي تختلــف عن المستخدمـــة في عيـن \n مليلـــة، وذلك بهدف إنشـــاء قامــوس أكثــر شمــولًا \n ملاحظة: يمكنكم العثور على معلومات حول المبرمج \n في صفحة تواصل معنا""")
+            color: 180/255, 190/255, 200/255, 1
+            font_name: "Amiri-Regular"
+            halign: "center"
+            size_hint_y: 0.5
+            font_size: min(self.width, self.height) * 0.06
+        MDGridLayout:
+            cols: 2
+            spacing: min(self.width, self.height) * 0.04
+            padding: min(self.width, self.height) * 0.04
+            size_hint_y: 0.7
+            MDRectangleFlatButton:
+                size_hint: 1, 1
+                line_color: 0, 0, 0, 0
+                on_release: app.root.current = "dictionary"
+                canvas.before:
+                    Color:
+                        rgba: 35/255, 50/255, 100/255, 0.5
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [min(self.width, self.height) * 0.1]
+                MDBoxLayout:
+                    orientation: "vertical"
+                    size_hint: 1, 1
+                    spacing: min(self.width, self.height) * 0.03
+                    padding: min(self.width, self.height) * 0.03
+                    Image:
+                        source:"dictionary12.png"
+                        size_hint_y: 0.6
+                    MDLabel:
+                        text: app.get_arabic_text("القاموس")
+                        font_name: "Amiri-Regular"
+                        color: 180/255, 190/255, 200/255, 1
+                        halign: "center"
+                        size_hint_y: 0.3
+                        font_size: self.height * 0.63
+            MDRectangleFlatButton:
+                size_hint: 1, 1
+                line_color: 0, 0, 0, 0
+                on_release: app.root.current = "verbsinput"
+                canvas.before:
+                    Color:
+                        rgba: 35/255, 50/255, 100/255, 0.5
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [min(self.width, self.height) * 0.1]
+                MDBoxLayout:
+                    orientation: "vertical"
+                    size_hint: 1, 1
+                    spacing: min(self.width, self.height) * 0.03
+                    padding: min(self.width, self.height) * 0.03
+                    Image:
+                        source:"word-of-mouth.png"
+                        size_hint_y: 0.7
+                    MDLabel:
+                        text: app.get_arabic_text("تصريف الأفعال")
+                        font_name: "Amiri-Regular"
+                        color: 180/255, 190/255, 200/255, 1
+                        halign: "center"
+                        size_hint_y: 0.3
+                        font_size: self.height * 0.6
+            MDRectangleFlatButton:
+                size_hint: 1, 1
+                line_color: 0, 0, 0, 0
+                on_release: app.root.current = "favorite"
+                canvas.before:
+                    Color:
+                        rgba: 35/255, 50/255, 100/255, 0.5
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [min(self.width, self.height) * 0.1]
+                MDBoxLayout:
+                    orientation: "vertical"
+                    size_hint: 1, 1
+                    spacing: min(self.width, self.height) * 0.03
+                    padding: min(self.width, self.height) * 0.03
+                    Image:
+                        source:"Favorite.png"
+                        size_hint_y: 0.7
+                    MDLabel:
+                        text: app.get_arabic_text("المفضلة")
+                        font_name: "Amiri-Regular"
+                        color: 180/255, 190/255, 200/255, 1
+                        halign: "center"
+                        size_hint_y: 0.3
+                        font_size: self.height * 0.65
+            MDRectangleFlatButton:
+                size_hint: 1, 1
+                line_color: 0, 0, 0, 0
+                on_release: app.root.current = "addword"
+                canvas.before:
+                    Color:
+                        rgba: 35/255, 50/255, 100/255, 0.5
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [min(self.width, self.height) * 0.1]
+                MDBoxLayout:
+                    orientation: "vertical"
+                    size_hint: 1, 1
+                    spacing: min(self.width, self.height) * 0.03
+                    padding: min(self.width, self.height) * 0.03
+                    Image:
+                        source:"puzzle.png"
+                        size_hint_y: 0.6
+                    MDLabel:
+                        text: app.get_arabic_text("إضافة كلمة")
+                        font_name: "Amiri-Regular"
+                        color: 180/255, 190/255, 200/255, 1
+                        halign: "center"
+                        size_hint_y: 0.3
+                        font_size: self.height * 0.6
+            MDRectangleFlatButton:
+                size_hint: 1, 1
+                line_color: 0, 0, 0, 0
+                on_release: app.root.current = "pronouninput"
+                canvas.before:
+                    Color:
+                        rgba: 35/255, 50/255, 100/255, 0.5
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [min(self.width, self.height) * 0.1]
+                MDBoxLayout:
+                    orientation: "vertical"
+                    size_hint: 1, 1
+                    spacing: min(self.width, self.height) * 0.03
+                    padding: min(self.width, self.height) * 0.03
+                    Image:
+                        source:"connection.png"
+                        size_hint_y: 0.6
+                    MDLabel:
+                        text: app.get_arabic_text("الضمائر المتصلة")
+                        font_name: "Amiri-Regular"
+                        color: 180/255, 190/255, 200/255, 1
+                        halign: "center"
+                        size_hint_y: 0.3
+                        font_size: self.height * 0.5
+            MDRectangleFlatButton:
+                size_hint: 1, 1
+                line_color: 0, 0, 0, 0
+                on_release: app.root.current = "contact"
+                canvas.before:
+                    Color:
+                        rgba: 35/255, 50/255, 100/255, 0.5
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [min(self.width, self.height) * 0.1]
+                MDBoxLayout:
+                    orientation: "vertical"
+                    size_hint: 1, 1
+                    spacing: min(self.width, self.height) * 0.03
+                    padding: min(self.width, self.height) * 0.03
+                    Image:
+                        source:"contact-us.png"
+                        size_hint_y: 0.5
+                    MDLabel:
+                        text: app.get_arabic_text("تواصل معنا")
+                        font_name: "Amiri-Regular"
+                        color: 180/255, 190/255, 200/255, 1
+                        halign: "center"
+                        size_hint_y: 0.3
+                        font_size: self.height * 0.5
+<DictionaryScreen>:
+    name: "dictionary"
+    md_bg_color: "#ddc6b6"
+    MDFloatLayout:
+        MDCard:
+            size_hint: 1.02, 0.45
+            radius: [min(self.width, self.height) * 0.1]
+            elevation: 1.5
+            pos_hint: {"center_x": 0.5, "center_y": 0.85}
+            md_bg_color: "#262223"
+            MDFloatLayout:
+                spacing: 10
+                size_hint: 1, 1
+                MDIconButton:
+                    icon: "arrow-left"
+                    theme_icon_color: "Custom"
+                    icon_color: "#eebe90"
+                    icon_size: min(self.width, self.height) * 0.45
+                    on_release: app.root.current = "main"
+                    size_hint: 0.2, 0.2
+                    pos_hint: {"center_x": 0.1, "center_y": 0.65}
+                Dic_text:
+                    id: dictionary_input
+                    font_name: "Amiri-Regular"
+                    line_color_normal: "#ffffff"
+                    line_color_focus : "#ffffff"
+                    font_size: min(self.width, self.height) * 0.35
+                    size_hint: 0.73, 0.16
+                    pos_hint: {"center_x": 0.55, "center_y": 0.65}
+                MDRectangleFlatIconButton:
+                    text: app.get_arabic_text("بحث")
+                    icon: "magnify"
+                    #radius: [20, 20, 20, 20]
+                    md_bg_color: "ddc6b6"
+                    icon_color: "#262648"
+                    icon_size: self.width * 0.2
+                    font_name: "Amiri-Regular"
+                    line_color: 0, 0, 0, 0
+                    text_color: "#262648"
+                    font_size: max(self.width, self.height) * 0.17
+                    pos_hint: {"center_x": 0.50, "center_y": 0.36}
+                    size_hint: 0.3, 0.1
+                    on_release: root.on_search()
+        MDCard:
+            size_hint: None, None
+            elevation: 1
+            size_hint: 0.8, 0.55
+            radius: [min(self.width, self.height) * 0.13]
+            md_bg_color: "#ddc6b6"
+            pos_hint: {"center_x": 0.5, "center_y": 0.42}
+            MDFloatLayout:
+                MDLabel:
+                    id: result_label
+                    text: ""
+                    font_name: "Amiri-Regular"
+                    font_size: max(self.width, self.height) * 0.048
+                    color: "#262223"
+                    halign: "right"
+                    size_hint_y: 1
+                    pos_hint: {"center_x": 0.47, "center_y": 0.42}
+        MDIconButton:
+            id: favorite_button
+            icon: "heart"
+            icon_size: max(self.width, self.height) * 0.4
+            theme_text_color: "Custom"
+            text_color: 1, 1, 1, 1
+            size_hint: 0.2, 0.095
+            pos_hint: {"center_x": 0.5, "center_y": 0.07}
+            md_bg_color: "262223"
+<AddWordScreen>:
+    name: "addword"
+    md_bg_color: 5/255, 15/255, 30/255, 1
+    MDFloatLayout:
+        size_hint: 1, 1
+        MDTopAppBar:
+            md_bg_color: 15/255, 25/255, 50/255, 1
+            pos_hint: {"center_x": 0.5, "top": 1}
+            size_hint: 1, 0.12
+            MDFloatLayout:
+                size_hint: 1, 1
+                spacing: min(self.width, self.height) * 0.1
+                padding: min(self.width, self.height) * 0.1
+                MDLabel:
+                    text: app.get_arabic_text("إضافة كلمة أو جملة")
+                    font_name: "Amiri-Regular"
+                    color: 180/255, 190/255, 200/255, 1
+                    font_size: self.height * 0.45
+                    pos_hint: {"center_x": 0.80, "center_y": 1}
+                MDIconButton:
+                    icon: "arrow-left"
+                    theme_icon_color: "Custom"
+                    icon_color: 180/255, 190/255, 200/255, 1
+                    on_release: app.root.current = "main"
+                    icon_size: self.width * 0.4
+                    size_hint: 0.2, 0.9
+                    pos_hint: {"center_x": 0.08, "center_y": 1}
+                MDIconButton:
+                    id: add_button
+                    icon_size: self.width * 0.4
+                    size_hint: 0.2, 0.9
+                    icon: "plus"
+                    theme_icon_color: "Custom"
+                    icon_color: 180/255, 190/255, 200/255, 1
+                    pos_hint: {"center_x": 0.93, "center_y": 1}
+                    on_release: app.root.current = "userinput"
+        ScrollView:
+            pos_hint: {"center_x": 0.5, "top": 0.88}
+            size_hint: 1, 0.89
+            MDList:
+                id: mdlist
+                padding: min(self.width, self.height) * 0.1
+<UserInput>:
+    name: "userinput"
+    md_bg_color: 5/255, 15/255, 30/255, 1
+    MDBoxLayout:
+        orientation: "vertical"
+        spacing: min(self.width, self.height) * 0.1
+        padding: min(self.width, self.height) * 0.1
+        MDFloatLayout:
+            size_hint_y: 1.5
+            MDIconButton:
+                icon: "arrow-left"
+                icon_size: self.width * 0.5
+                size_hint: 0.2, 0.9
+                theme_icon_color: "Custom"
+                icon_color: 180/255, 190/255, 200/255, 1
+                pos_hint: {"center_x": 0.05, "center_y": 0.90}
+                on_release: app.root.current = "addword"
+        MDBoxLayout:
+            orientation: "vertical"
+            size_hint_y: 0.8
+            spacing: min(self.width, self.height) * 0.5
+            padding: min(self.width, self.height) * 0.1
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+            Ar_text:
+                id: word_input
+                font_size: max(self.width, self.height) * 0.08
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                font_name: "Amiri-Regular"
+                line_color_normal: 1, 1, 1, 1
+            Ch_text:
+                id: meaning_input
+                font_size: max(self.width, self.height) * 0.08
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                font_name: "Amiri-Regular"
+                line_color_normal: 1, 1, 1, 1
+        MDBoxLayout:
+            orientation: "vertical"
+            size_hint_y: 1.2
+            MDFillRoundFlatIconButton:
+                text: "save"
+                icon: "content-save"
+                size_hint: 0.35, 0.2
+                text_color: 5/255, 15/255, 30/255, 1
+                icon_color: 5/255, 15/255, 30/255, 1
+                md_bg_color: 1, 1, 1, 1
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                on_release: root.save_word(word_input.text, meaning_input.text)
+            Widget:
+<VerbsScreen>:
+    name: "verbsinput"
+    md_bg_color: 5/255, 15/255, 30/255, 1
+    MDBoxLayout:
+        orientation: "vertical"
+        size_hint: 1, 1
+        spacing: min(self.width, self.height) * 0.1
+        padding: min(self.width, self.height) * 0.05
+        MDFloatLayout:
+            spacing: min(self.width, self.height) * 0.1
+            size_hint_y: 0.2
+            pos_hint: {"top": 1}
+            MDIconButton:
+                icon: "arrow-left"
+                theme_icon_color: "Custom"
+                icon_color: 180/255, 190/255, 200/255, 1
+                on_release: app.root.current = "main"
+                size_hint: 0.15, 0.7
+                icon_size: max(self.width, self.height) * 0.5
+                pos_hint: {"center_x": 0.1, "center_y": 0.3}
+            Ver_text:
+                id: verb_input
+                font_name: "Amiri-Regular"
+                line_color_normal: "#ffffff"
+                line_color_focus : "#ffffff"
+                font_size: max(self.width, self.height) * 0.08
+                pos_hint: {"center_x": 0.6, "center_y": 0.3}
+                size_hint_x: 0.7
+        MDRectangleFlatIconButton:
+            text: app.get_arabic_text("بحث")
+            icon: "magnify"
+            radius: [20, 20, 20, 20]
+            md_bg_color: "ddc6b6"
+            icon_color: "#262648"
+            icon_size: "20dp"
+            font_name: "Amiri-Regular"
+            line_color: 0, 0, 0, 0
+            text_color: "#262648"
+            font_size: max(self.width, self.height) * 0.17
+            icon_size: max(self.width, self.height) * 0.25
+            size_hint: 0.3, 0.03
+            pos_hint: {"center_x": 0.55, "center_y": 0.3}
+            on_release: root.on_search_verb()
+        MDScrollView:
+            do_scroll_y: True
+            do_scroll_x: False
+            MDBoxLayout:
+                orientation: "vertical"
+                padding: 10
+                spacing: 10
+                size_hint_y: None
+                height: self.minimum_height
+                MDLabel:
+                    id: verb_label
+                    text: ""
+                    font_name: "Amiri-Regular"
+                    color: 1, 1, 1, 1
+                    font_size: "15sp"
+                    halign: "right"
+                    valign: "top"
+                    markup: True
+                    text_size: self.width, None
+                    size_hint_y: None
+                    height: self.texture_size[1]
+<ConnectedPronouns>:
+    name: "pronouninput"
+    md_bg_color: 5/255, 15/255, 30/255, 1
+    MDBoxLayout:
+        orientation: "vertical"
+        size_hint: 1, 1
+        spacing: min(self.width, self.height) * 0.1
+        padding: min(self.width, self.height) * 0.04
+        MDFloatLayout:
+            spacing: min(self.width, self.height) * 0.1
+            size_hint_y: 0.2
+            pos_hint: {"top": 1}
+            MDIconButton:
+                icon: "arrow-left"
+                theme_icon_color: "Custom"
+                icon_color: 180/255, 190/255, 200/255, 1
+                on_release: app.root.current = "main"
+                size_hint: 0.15, 0.7
+                icon_size: max(self.width, self.height) * 0.35
+                pos_hint: {"center_x": 0.1, "center_y": 0.3}
+            Pron_text:
+                id: pronouns_input
+                font_name: "Amiri-Regular"
+                line_color_normal: "#ffffff"
+                line_color_focus : "#ffffff"
+                font_size: max(self.width, self.height) * 0.08
+                pos_hint: {"center_x": 0.57, "center_y": 0.3}
+                size_hint_x: 0.7
+        MDRectangleFlatButton:
+            text: "search"
+            pos_hint: {"center_x": 0.55, "center_y": 0.5}
+            on_release: root.on_search_pronouns()
+            size_hint: 0.27, 0.06
+            font_size: max(self.width, self.height) * 0.17
+        MDScrollView:
+            do_scroll_y: True
+            do_scroll_x: False
+            MDBoxLayout:
+                orientation: "vertical"
+                padding: 10
+                spacing: 10
+                size_hint_y: None
+                height: self.minimum_height
+                MDLabel:
+                    id: pronouns_label
+                    text: ""
+                    font_name: "Amiri-Regular"
+                    color: 1, 1, 1, 1
+                    halign: "right"
+                    valign: "top"
+                    markup: True
+                    text_size: self.width, None
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                MDLabel:
+                    id: hint_label
+                    text: ""
+                    font_name: "Amiri-Regular"
+                    color: 180/255, 190/255, 200/255, 1
+                    font_size: "13sp"
+                    halign: "right"
+                    valign: "top"
+                    size_hint_y: None
+                    height: self.texture_size[1]
+<FavoriteScreen>:
+    name: "favorite"
+    md_bg_color: 5/255, 15/255, 30/255, 1
+    MDBoxLayout:
+        orientation: "vertical"
+        size_hint: 1, 1
+        MDTopAppBar:
+            md_bg_color: 15/255, 25/255, 50/255, 1
+            pos_hint: {"center_x": 0.5, "top": 1}
+            size_hint: 1, 0.15
+            MDFloatLayout:
+                size_hint: 1, 1
+                spacing: min(self.width, self.height) * 0.1
+                padding: min(self.width, self.height) * 0.1
+                MDLabel:
+                    text: app.get_arabic_text("الكلمات المفضلة")
+                    font_name: "Amiri-Regular"
+                    color: 180/255, 190/255, 200/255, 1
+                    font_size: self.height * 0.4
+                    pos_hint: {"center_x": 0.9, "center_y": 1}
+                MDIconButton:
+                    icon: "arrow-left"
+                    theme_icon_color: "Custom"
+                    icon_color: 180/255, 190/255, 200/255, 1
+                    on_release: app.root.current = "main"
+                    icon_size: max(self.width, self.height) * 0.65
+                    size_hint: 0.1, 0.8
+                    pos_hint: {"center_x": 0.1, "center_y": 1}
+        ScrollView:
+            MDList:
+                id: favoritelist
+                spacing: 10
+                padding: 10
+<ContactUs>:
+    name: "contact"
+    md_bg_color: "#ddc6b6"
+    MDFloatLayout:
+        MDCard:
+            size_hint: None, None
+            size_hint: 1.1, 0.53
+            radius: [min(self.width, self.height) * 0.15]
+            elevation: 1.5
+            pos_hint: {"center_x": 0.5, "center_y": 0.85}
+            md_bg_color: "#262223"
+            MDFloatLayout:
+                FitImage:
+                    source: "Untitled-1.png"
+                    size_hint: 0.48, 0.175
+                    pos_hint: {"center_x": 0.5, "center_y": 0.58}
+                MDLabel:
+                    text: app.get_arabic_text("الشكر الجزيل للأخ عبد الله نزاري على جهوده \nالمـبـذولــة في بـنـاء هـذا الـقـامـوس المـتـواضـع")
+                    font_name: "Amiri-Regular"
+                    color: 180/255, 190/255, 200/255, 1
+                    halign: "right"
+                    font_size: self.height * 0.05
+                    pos_hint: {"center_x": 0.38, "center_y": 0.35}
+
+        MDCard:
+            size_hint: None, None
+            elevation: 1
+            size_hint: 0.8, 0.55
+            radius: [min(self.width, self.height) * 0.1]
+            md_bg_color: "#ddc6b6"
+            pos_hint: {"center_x": 0.5, "center_y": 0.42}
+            MDFloatLayout:
+                spacing: min(self.width, self.height) * 0.07
+                padding: min(self.width, self.height) * 0.04
+                MDLabel:
+                    text: app.get_arabic_text("تواصل معنا عبر:")
+                    font_name: "Amiri-Regular"
+                    color: 0, 0, 0, 1
+                    font_size: self.height * 0.06
+                    pos_hint: {"center_x": 0.78, "center_y": 0.9}
+                MDBoxLayout:
+                    orientation: "vertical"
+                    spacing: min(self.width, self.height) * 0.07
+                    padding: min(self.width, self.height) * 0.04
+                    pos_hint: {"center_x": 0.5, "center_y": 0.45}
+                    size_hint: 1, 0.7
+                    MDRectangleFlatIconButton:
+                        text: "Email"
+                        icon: "email"
+                        icon_size: max(self.width, self.height) * 0.13
+                        font_size: max(self.width, self.height) * 0.09
+                        md_bg_color: "#262223"
+                        icon_color: "#ffffff"
+                        size_hint: 0.8, 0.7
+                        line_color: 0, 0, 0, 0
+                        text_color: "#ffffff"
+                        on_release: app.open_email()
+                        pos_hint: {"center_x": 0.5, "center_y": 0.532}
+                    MDRectangleFlatIconButton:
+                        radius: [min(self.width, self.height) * 0.1]
+                        text: "Whatsapp"
+                        icon: "whatsapp"
+                        md_bg_color: "#262223"
+                        icon_color: "#ffffff"
+                        icon_size: max(self.width, self.height) * 0.13
+                        font_size: max(self.width, self.height) * 0.09
+                        size_hint: 0.8, 0.7
+                        line_color: 0, 0, 0, 0
+                        text_color: "#ffffff"
+                        on_release: app.open_whatsapp()
+                        pos_hint: {"center_x": 0.5, "center_y": 0.532}
+                    MDRectangleFlatIconButton:
+                        text: "Upwork"
+                        icon: "web"
+                        md_bg_color: "#262223"
+                        icon_color: "#ffffff"
+                        icon_size: max(self.width, self.height) * 0.13
+                        font_size: max(self.width, self.height) * 0.09
+                        size_hint: 0.8, 0.7
+                        line_color: 0, 0, 0, 0
+                        text_color: "#ffffff"
+                        on_release: app.open_upwork()
+                        pos_hint: {"center_x": 0.5, "center_y": 0.532}
+                    MDRectangleFlatIconButton:
+                        text: "Phone number"
+                        icon: "phone"
+                        md_bg_color: "#262223"
+                        icon_color: "#ffffff"
+                        icon_size: max(self.width, self.height) * 0.13
+                        font_size: max(self.width, self.height) * 0.09
+                        size_hint: 0.8, 0.7
+                        line_color: 0, 0, 0, 0
+                        text_color: "#ffffff"
+                        on_release: app.open_phone()
+                        pos_hint: {"center_x": 0.5, "center_y": 0.532}
+        MDFillRoundFlatIconButton:
+            text: app.get_arabic_text("القائمة الرئيسية")
+            font_name: "Amiri-Regular"
+            font_size: max(self.width, self.height) * 0.08
+            text_color: "#ffffff"
+            md_bg_color: "#262223"
+            pos_hint: {"center_x": 0.5, "center_y": 0.08}
+            size_hint: 0.7, 0.01
+            on_release: app.root.current = "main"
+
+
+
+
+
+
+
+
