@@ -11,10 +11,10 @@ from kivymd.uix.button import MDIconButton, MDRectangleFlatButton, MDFlatButton
 from kivymd.uix.dialog import MDDialog
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.popup import Popup
-from kivy.core.window import Window
+#from kivy.core.window import Window
 import csv
 import webbrowser
-Window.size = (270, 600)
+#Window.size = (270, 600)
 
 
 class CustomThreeLineListItem(ThreeLineAvatarIconListItem):
